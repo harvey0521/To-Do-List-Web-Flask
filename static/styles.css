@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Klee+One&display=swap');
+body{
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container{
+    background-color: transparent;
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 5px 5px 10px 0px #8600FF,inset -3px -3px 20px 10px #5B00AE ;
+    width: 300px;
+    text-align: center;
+}
+h1{
+    color: #fff;
+    font-family: Klee One;
+    font-size: 45px;
+    margin-bottom: 40px;
+}
+#taskInput{
+    color: #fff;
+    font-size: 1rem;
+    background-color: transparent;
+    width: 80%;
+    box-sizing: border-box;
+    padding: 15px;
+    margin-bottom: 40px;
+    border: none;
+    box-shadow:
+    inset -4px -4px 18px -1px #5B00AE;
+    border-radius: 20px;
+    border-bottom: 1px solid #000000;
+}
+#taskInput:hover{
+    background-color: #4985e01f;
+    border-radius: 20px;
+    transition: 1s;
+    border-bottom: 1px solid #921AFF;
+}
+#taskInput:focus{
+    outline: none;
+}
+#addButton{
+    background-color:transparent ;
+    padding: 10px 45px;
+    border-radius: 20px;
+    box-shadow: 
+    inset -4px -4px 18px -1px 	#5B00AE;
+    border: none;
+    cursor: pointer;
+    transition: all 1s;
+}
+#addButton:hover{
+    box-shadow: 
+    inset 0px 0px 12px 1px 	#4B0091
+}
+#addButton:active{
+    box-shadow:inset 0px 0px 18px -6px rgb(89, 0, 255);
+}
+.text{
+    color: #fff;
+    font-family:Klee One ;
+    font-size: 15px;
+    font-weight:700;
+    transition: all 1s;
+}
+#addButton:hover .text{
+    transform: scale(0.9);
+}
+#addButton:active .text{
+    transform: scale(0.6);
+} 
+#taskList{
+    list-style-type: none;
+    padding: 0;
+}
+#taskList li {
+    color: #fff;
+    font-family: Klee One;
+    background-color: transparent;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 1;
+    transition: all 1s ease;
+}
+#taskList li.finish{
+    text-decoration: line-through;
+    color: #888;
+}
+#taskList li button{
+    color: #fff;
+    font-family: Klee One;
+    font-size: 15px;
+    padding: 5px 15px;
+    background-color: transparent;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 
+    inset -4px -4px 18px -1px 	#5B00AE;
+    transition: all 1s;
+}
+#taskList li button:hover{
+    box-shadow: 
+    inset 0px 0px 12px 1px 	#4B0091
+    
+}
+
