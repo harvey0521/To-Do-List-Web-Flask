@@ -30,6 +30,7 @@ def add_task():
         'finish': False
     }
     tasks.append(new_task)  #剛剛新建好的這個任務，加到 tasks 這個列表（list）裡 (tasks = [])
+    print(f'➕ 加入了{new_task["text"]}任務')
     return jsonify(new_task),201 #把 Python 的字典（像 { "id": 1, "text": "買牛奶" }）轉成 JSON 格式，這樣前端才能懂你回什麼。
 
 @app.route('/tasks/<int:task_id>/toggle', methods = ['POST'])   #更新
@@ -37,6 +38,7 @@ def update_task(task_id):
     for task in tasks:
         if task['id'] == task_id:
             task['finish'] = not task['finish'] #預設是 False
+            print(f'✔️  完成了{task['text']}任務')
             return jsonify(task),200 
     # return jsonify({"error": "Task not found"}), 404    #js刪除按鈕沒阻止冒泡，如果按過完成再刪除會顯示沒有任務
 
@@ -52,6 +54,7 @@ def delete_task(task_id):   #task_id 是傳進來的參數，代表「要刪掉�
         task['text']: 'deleted'    #字典 # 買牛奶 : "deleted"
     }
     json_response = json.dumps(response)    #使用 dumps 將 Python 字典轉換成 JSON 字串
+    print(f'🔴 {task['text']}結束了')
     return Response(json_response,status=200, mimetype='application/json') 
 
 if __name__ == '__main__':  #確保只有當這個檔案是直接執行時，才會執行後面的 
