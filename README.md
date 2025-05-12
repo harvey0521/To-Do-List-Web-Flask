@@ -1,4 +1,4 @@
-# **待辦清單（To-Do List）Web App (前後端整合)**
+# **待辦清單 To-Do List Web App ( Flask )**
 
 這是 To-Do List 專案練習的完整版本，包含前端和後端。
 
