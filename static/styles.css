@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Klee+One&display=swap');
-body{
-    background-color: black;
+
+body {
+    background-image: url('images/background.jpg');
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: overlay;
     margin: 0;
     padding: 0;
     display: flex;
@@ -8,83 +12,126 @@ body{
     align-items: center;
     height: 100vh;
 }
-.container{
+
+.container {
     background-color: transparent;
+    backdrop-filter: blur(20px);
     border-radius: 30px;
     padding: 40px;
-    box-shadow: 5px 5px 10px 0px #8600FF,inset -3px -3px 20px 10px #5B00AE ;
-    width: 300px;
-    text-align: center;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+        -1px -1px 6px rgba(255, 255, 255, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-h1{
-    color: #fff;
+
+h1 {
+    color: black;
     font-family: Klee One;
-    font-size: 45px;
+    font-size: 55px;
     margin-bottom: 40px;
 }
-#taskInput{
-    color: #fff;
-    font-size: 1rem;
+
+.inputText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
     background-color: transparent;
-    width: 80%;
-    box-sizing: border-box;
-    padding: 15px;
+    overflow: hidden;
     margin-bottom: 40px;
     border: none;
-    box-shadow:
-    inset -4px -4px 18px -1px #5B00AE;
-    border-radius: 20px;
-    border-bottom: 1px solid #000000;
+    border-radius: 15px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+        -1px -1px 6px rgba(255, 255, 255, 0.4);
 }
-#taskInput:hover{
-    background-color: #4985e01f;
-    border-radius: 20px;
-    transition: 1s;
-    border-bottom: 1px solid #921AFF;
+
+.inputText::after {
+    content: "";
+    height: 2px;
+    width: 0;
+    background-color: rgba(255, 255, 255, 0.6);
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    transition: width 0.5s ease-in-out;
 }
-#taskInput:focus{
+
+.inputText:hover::after {
+    width: 100%;
+}
+
+#taskInput {
+    width: 225px;
+    border: none;
+    font-family: Klee One;
+    font-size: 1rem;
+    padding: 10px 15px;
+    color: black;
+    background-color: transparent;
+    box-sizing: border-box;
+    border-radius: 15px;
+    transition: width 0.5s ease-in-out
+}
+
+
+#taskInput:focus {
     outline: none;
+    height: 50px;
+    width: 300px;
+    border-radius: 15px;
+    background-color: transparent;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+        -1px -1px 6px rgba(255, 255, 255, 0.4),
+        inset 3px 3px 10px rgba(0, 0, 0, 1),
+        inset -1px -1px 6px rgba(255, 255, 255, 0.4);
 }
-#addButton{
-    background-color:transparent ;
+
+#addButton {
+    background-color: transparent;
     padding: 10px 45px;
     border-radius: 20px;
-    box-shadow: 
-    inset -4px -4px 18px -1px 	#5B00AE;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+        -1px -1px 6px rgba(255, 255, 255, 0.4);
     border: none;
     cursor: pointer;
-    transition: all 1s;
 }
-#addButton:hover{
-    box-shadow: 
-    inset 0px 0px 12px 1px 	#4B0091
+
+
+#addButton:active {
+    box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.8),
+        /* 更深的內凹陰影 */
+        inset -2px -2px 8px rgba(255, 255, 255, 0.3);
+    /* 更亮的邊緣高光 */
 }
-#addButton:active{
-    box-shadow:inset 0px 0px 18px -6px rgb(89, 0, 255);
-}
-.text{
-    color: #fff;
-    font-family:Klee One ;
+
+.text {
+    color: black;
+    font-family: Klee One;
     font-size: 15px;
-    font-weight:700;
-    transition: all 1s;
+    font-weight: 700;
+    transition: all 1s ease;
 }
-#addButton:hover .text{
-    transform: scale(0.9);
+
+#addButton:hover .text {
+    transform: scale(1.3);
 }
-#addButton:active .text{
+
+#addButton:active .text {
     transform: scale(0.6);
-} 
-#taskList{
+}
+
+#taskList {
     list-style-type: none;
     padding: 0;
 }
+
 #taskList li {
-    color: #fff;
+    color: black;
     font-family: Klee One;
     background-color: transparent;
+    width: 225px;
     padding: 10px;
-    margin: 5px 0;
     border-radius: 20px;
     display: flex;
     justify-content: space-between;
@@ -92,25 +139,59 @@ h1{
     opacity: 1;
     transition: all 1s ease;
 }
-#taskList li.finish{
+
+#taskList li.finish {
     text-decoration: line-through;
     color: #888;
 }
-#taskList li button{
-    color: #fff;
-    font-family: Klee One;
-    font-size: 15px;
+
+#taskList li button {
+    position: relative;
     padding: 5px 15px;
     background-color: transparent;
     border: none;
     border-radius: 15px;
-    box-shadow: 
-    inset -4px -4px 18px -1px 	#5B00AE;
-    transition: all 1s;
-}
-#taskList li button:hover{
-    box-shadow: 
-    inset 0px 0px 12px 1px 	#4B0091
-    
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+        -1px -1px 6px rgba(255, 255, 255, 0.4);
+    overflow: hidden;
 }
 
+.delete-text {
+    color: black;
+    font-family: Klee One;
+    font-size: 15px;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+}
+
+#taskList li button:hover .delete-text {
+    transform: translateX(-160%) scale(0.1);
+}
+
+.delete-icon {
+    color: black;
+    font-size: 15px;
+    position: absolute;
+    left: 40%;
+    top: 25%;
+    transform: translateX(150%);
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+}
+
+
+#taskList li button:hover .delete-icon {
+    transform: translateX(0) scale(1.3);
+    opacity: 1;
+}
+
+#taskList li button:active .delete-icon {
+    transform: scale(1);
+}
+
+#taskList li button:active {
+    box-shadow: inset 3px 3px 10px rgba(0, 0, 0, 0.8),
+        /* 更深的內凹陰影 */
+        inset -2px -2px 8px rgba(255, 255, 255, 0.3);
+    /* 更亮的邊緣高光 */
+}
