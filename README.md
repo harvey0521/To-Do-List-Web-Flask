@@ -34,23 +34,16 @@
 
 <br>
 
-## 後端整合成功畫面
+## 畫面預覽
 
-<br>
+### 主畫面
+![主畫面](./images/main.png)
 
-##  運行專案
+### 新增、刪除、切換完成畫面
+![新增、刪除、切換完成畫面](./images/add.png)
 
-### 1. 安裝 Python 套件
-
-```bash
-pip install flask
-```
-
-### 2. 啟動伺服器
-
-```bash
-python app.py
-```
+### 後端儲存資料成功畫面
+![後端儲存資料成功畫面](./images/prove.png)
 
 <br>
 
@@ -68,8 +61,30 @@ python app.py
 
 <br>
 
-##  專案比較
+##  運行專案
 
-- **純前端版本**：這個版本只包含了 HTML/CSS/JS，並不依賴後端伺服器，所有資料是靜態的，並且主要展示前端頁面和互動邏輯。
-  
-- **前後端整合版本**：此版本不僅有前端，還使用 Python（Flask）實作後端來處理動態資料，支援資料儲存、API 請求處理等功能。
+### 1. 安裝檔案
+
+```bash
+git clon https://github.com/harvey0521/To-Do-List-Web-Flask.git
+```
+
+### 2. 建立 & 啟用虛擬環境
+
+```bash
+cd To-Do-List-Web-Flask
+python -m venv venv
+.\venv\Scripts\activate
+```
+
+### 1. 安裝相依套件
+
+```bash
+pip install -r requirements.txt
+```
+
+### 2. 啟動 Flask 伺服器
+
+```bash
+python app.py
+```
