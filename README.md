@@ -1,6 +1,6 @@
 # **待辦清單 To-Do List Web App ( Flask )**
 
-這是 To-Do List 專案練習的完整版本，包含前端和後端。
+這是 To-Do List 作品練習的完整版本，包含前端和後端。
 
 前端使用純 HTML、CSS 和 JavaScript，而後端則是用 Python (Flask) 實現。
 
@@ -61,7 +61,7 @@
 
 <br>
 
-##  運行專案
+##  開啟作品
 
 ### 1. 安裝檔案
 
